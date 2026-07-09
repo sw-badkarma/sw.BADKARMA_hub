@@ -178,23 +178,24 @@
 .search-filter-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    align-items: center;    /* Centrează perfect pe orizontală (atât bara, cât și butoanele) */
+    justify-content: center;/* Asigură centrarea pe laptop/PC */
+    gap: 8px;               /* Am micșorat distanța dintre bară și butoane de la 10px la 8px */
+    margin-bottom: 15px;    /* Am micșorat și spațiul de sub întregul container */
     padding: 0 5px;
-    align-items: center; /* Centrează bara de căutare pe mijlocul ecranului */
+    width: 100%;            /* Ocupă toată lățimea pentru ca alinierea pe centru să aibă efect */
 }
-        
+
 /* Containerul care ține lupa și bara de text */
 .search-wrapper {
     position: relative;
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05); /* Efectul tău de sticlă */
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    
-    /* MODIFICAREA DE LĂȚIME STÂNGA-DREAPTA AICI: */
-    width: 220px; /* Am schimbat de la 100% la 220px fix ca să fie mult mai îngustă */
+    width: 220px;           /* Păstrează lățimea ei fixă și îngustă */
+    margin: 0 auto;         /* Trucul clasic de CSS pentru a forța centrarea elementelor fixe */
 }
 
 /* Iconița de lupă din interior */

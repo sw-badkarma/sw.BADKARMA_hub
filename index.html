@@ -181,9 +181,9 @@
     gap: 10px;
     margin-bottom: 20px;
     padding: 0 5px;
-    align-items: center; /* Nou: Centrează bara de căutare pe mijlocul ecranului */
+    align-items: center; /* Centrează bara de căutare pe mijlocul ecranului */
 }
-
+        
 /* Containerul care ține lupa și bara de text */
 .search-wrapper {
     position: relative;
@@ -223,9 +223,11 @@
             gap: 8px;
             overflow-x: auto;
             padding-bottom: 5px;
+            padding-left: 15px;  /* Adaugă un spațiu elegant în stânga primului buton */
+            padding-right: 15px; /* Adaugă spațiu și după ultimul buton */
         }
 
-        .filter-buttons::-webkit-scrollbar { display: none; }
+.filter-buttons::-webkit-scrollbar { display: none; }
 
         .filter-btn {
             background: var(--glass-bg);

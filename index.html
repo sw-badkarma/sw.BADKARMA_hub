@@ -177,16 +177,17 @@
 /* --- FILTRE & CĂUTARE GUNSMITH --- */
 .search-filter-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;    /* Centrează perfect pe orizontală (atât bara, cât și butoanele) */
-    justify-content: center;/* Asigură centrarea pe laptop/PC */
-    gap: 8px;               /* Am micșorat distanța dintre bară și butoane de la 10px la 8px */
-    margin-bottom: 15px;    /* Am micșorat și spațiul de sub întregul container */
-    padding: 0 5px;
-    width: 100%;            /* Ocupă toată lățimea pentru ca alinierea pe centru să aibă efect */
+    flex-direction: row;       /* Forțează așezarea pe același rând și pe telefon și pe laptop */
+    align-items: center;       /* Le aliniază perfect pe mijloc pe verticală */
+    justify-content: center;   /* Centrează tot grupul pe mijlocul ecranului */
+    gap: 10px;                 /* Distanța mică și strânsă între bară și primul buton */
+    margin-bottom: 20px;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Containerul care ține lupa și bara de text */
+/* Căsuța de căutare */
 .search-wrapper {
     position: relative;
     display: flex;
@@ -194,8 +195,8 @@
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    width: 220px;           /* Păstrează lățimea ei fixă și îngustă */
-    margin: 0 auto;         /* Trucul clasic de CSS pentru a forța centrarea elementelor fixe */
+    width: 160px !important;   /* Am făcut bara puțin mai îngustă (160px) ca să încapă excelent pe telefon lângă butoane */
+    flex-shrink: 0;            /* Împiedică deformarea barei pe ecrane mici */
 }
 /* Iconița de lupă din interior */
 .search-wrapper i {
@@ -218,16 +219,29 @@
     padding: 8px 10px 8px 32px;  /* Am redus înălțimea (sus/jos la 8px) și am lăsat loc în stânga pentru lupă (32px) */
 }        
 
-        .filter-buttons {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            justify-content: center; /* Centrează butoanele pe laptop dacă au loc suficient */
-            padding-bottom: 5px;
-            width: 100%;
-        }
+        /* BUTOANELE DE FILTRARE (Aici am înlocuit vechea ta clasă) */
+.filter-buttons {
+    display: flex;
+    gap: 6px;                  
+    overflow-x: auto;          
+    justify-content: flex-start; 
+    padding-bottom: 5px;
+    width: auto;               
+}
 
-.filter-buttons::-webkit-scrollbar { display: none; }
+.filter-buttons::-webkit-scrollbar { 
+    display: none;             
+}
+
+/* REGLAJ SPECIAL PENTRU LAPTOP / PC */
+@media (min-width: 768px) {
+    .search-wrapper {
+        width: 220px !important; 
+    }
+    .filter-buttons {
+        justify-content: center; 
+    }
+}
 
         .filter-btn {
             background: var(--glass-bg);

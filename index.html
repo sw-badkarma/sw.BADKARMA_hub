@@ -183,28 +183,40 @@
             padding: 0 5px;
         }
 
-        .search-wrapper {
-            position: relative;
-            width: 100%;
-        }
+        /* Containerul care ține lupa și bara de text */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Efectul tău de sticlă */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    
+    /* MODIFICĂRI DE DIMENSIUNE: */
+    max-width: 260px; /* Am scăzut lățimea maximă (înainte probabil era 300px-400px) */
+    width: 100%;
+}
 
-        .search-wrapper i {
-            position: absolute;
-            left: 12px; top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-        }
+/* Iconița de lupă din interior */
+.search-wrapper i {
+    position: absolute;
+    left: 10px;
+    font-size: 0.85rem; /* Am făcut lupa puțin mai mică */
+    color: rgba(255, 255, 255, 0.6);
+}
 
-        .search-bar {
-            width: 100%;
-            padding: 10px 10px 10px 35px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 4px;
-            color: var(--text-main);
-            font-size: 0.9rem;
-            outline: none;
-        }
+/* Bara de scris propriu-zisă */
+.search-bar {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    
+    /* MODIFICĂRI DE DIMENSIUNE: */
+    font-size: 0.85rem;          /* Am micșorat textul "Caută o armă..." de la 1rem la 0.85rem */
+    padding: 8px 10px 8px 32px;  /* Am redus înălțimea (sus/jos la 8px) și am lăsat loc în stânga pentru lupă (32px) */
+}
 
         .filter-buttons {
             display: flex;

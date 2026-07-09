@@ -174,16 +174,17 @@
             border-radius: 1px;
         }
 
-        /* --- FILTRE & CĂUTARE GUNSMITH --- */
-        .search-filter-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding: 0 5px;
-        }
+/* --- FILTRE & CĂUTARE GUNSMITH --- */
+.search-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0 5px;
+    align-items: center; /* Nou: Centrează bara de căutare pe mijlocul ecranului */
+}
 
-        /* Containerul care ține lupa și bara de text */
+/* Containerul care ține lupa și bara de text */
 .search-wrapper {
     position: relative;
     display: flex;
@@ -192,9 +193,8 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     
-    /* MODIFICĂRI DE DIMENSIUNE: */
-    max-width: 260px; /* Am scăzut lățimea maximă (înainte probabil era 300px-400px) */
-    width: 100%;
+    /* MODIFICAREA DE LĂȚIME STÂNGA-DREAPTA AICI: */
+    width: 220px; /* Am schimbat de la 100% la 220px fix ca să fie mult mai îngustă */
 }
 
 /* Iconița de lupă din interior */
@@ -213,10 +213,10 @@
     outline: none;
     color: #fff;
     
-    /* MODIFICĂRI DE DIMENSIUNE: */
+    /* MODIFICĂRI DE DIMENSIUNE SUS-JOS: */
     font-size: 0.85rem;          /* Am micșorat textul "Caută o armă..." de la 1rem la 0.85rem */
     padding: 8px 10px 8px 32px;  /* Am redus înălțimea (sus/jos la 8px) și am lăsat loc în stânga pentru lupă (32px) */
-}
+}        
 
         .filter-buttons {
             display: flex;

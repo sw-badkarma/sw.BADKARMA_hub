@@ -256,27 +256,38 @@
         }
 
         /* --- ADAPTARE PENTRU MODUL LUMINOS --- */
-body.light-mode .search-wrapper,
-body.light .search-wrapper,
-body[data-theme="light"] .search-wrapper {
-    background: rgba(0, 0, 0, 0.06) !important;       
-    border: 1px solid rgba(0, 0, 0, 0.8) !important;   
-}
+        body.light-mode .search-wrapper,
+        body.light .search-wrapper,
+        body[data-theme="light"] .search-wrapper {
+        background: rgba(0, 0, 0, 0.06) !important;       
+        border: 1px solid rgba(0, 0, 0, 0.8) !important;   
+        }
 
-body.light-mode .search-wrapper i,
-body.light .search-wrapper i {
-    color: rgba(0, 0, 0, 0.7) !important;
-}
+        body.light-mode .search-wrapper i,
+        body.light .search-wrapper i {
+        color: rgba(0, 0, 0, 0.7) !important;
+        }
 
-body.light-mode .search-bar,
-body.light .search-bar {
-    color: #000000 !important;
-}
+        body.light-mode .search-bar,
+        body.light .search-bar {
+        color: #000000 !important;
+        }
 
-body.light-mode .search-bar::placeholder,
-body.light .search-bar::placeholder {
-    color: rgba(0, 0, 0, 0.5) !important;
-}
+        body.light-mode .search-bar::placeholder,
+        body.light .search-bar::placeholder {
+        color: rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* --- FORȚARE CHENAR NEGRU SUBȚIRE ÎN MODUL LUMINOS --- */
+        body.light-mode .search-wrapper,
+        body.light-theme .search-wrapper,
+        body.light .search-wrapper,
+        body[data-theme="light"] .search-wrapper,
+        .light-mode .search-wrapper,
+        .light-theme .search-wrapper {
+        border: 1px solid #000000 !important; /* Face linia chenarului neagră și subțire */
+        background: rgba(0, 0, 0, 0.05) !important; /* Oferă un fundal fin, ușor vizibil */
+        }
         
         .filter-btn.active {
             background: var(--text-main);

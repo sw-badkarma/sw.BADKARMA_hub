@@ -1620,34 +1620,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        let touchstartX = 0;
-        let touchendX = 0;
-        const zone = document.getElementById('swipe-zone');
-        
-        zone.addEventListener('touchstart', e => {
-            touchstartX = e.changedTouches[0].screenX;
-        }, {passive: true});
-        
-        zone.addEventListener('touchend', e => {
-            touchendX = e.changedTouches[0].screenX;
-            handleGesture();
-        }, {passive: true});
-        
-        function handleGesture() {
-            const activePage = document.querySelector('.page-content.active');
-            let currentIndex = pagesList.indexOf(activePage.id);
-            if (touchstartX - touchendX > 80) {
-                if(currentIndex < pagesList.length - 1) {
-                    switchPage(pagesList[currentIndex + 1], null);
-                }
-            }
-            if (touchendX - touchstartX > 80) {
-                if(currentIndex > 0) {
-                    switchPage(pagesList[currentIndex - 1], null);
-                }
-            }
-        }
-
         function toggleTheme() {
             const htmlElement = document.documentElement;
             const currentTheme = htmlElement.getAttribute('data-theme');
